@@ -47,11 +47,11 @@ class Dash:
         
         if self.last_isempty == 0 and self.isempty == 1:
             self.buffer_empty_count = self.buffer_empty_count + 1
-        print self.isdownloading, self.can_download
+        #print self.isdownloading, self.can_download
         #time.sleep(0.5)
         if self.can_download == 1:
             self.chunk_downloaded = self.chunk_downloaded + self.sim_inteval * self.last_netspeed
-            print self.chunk_downloaded, self.chunk_size
+            #print self.chunk_downloaded, self.chunk_size
             if self.chunk_downloaded >= self.chunk_size:
                 self.isdownloading = 0
                 self.log(str(self.chunk_index) + " Downloaded!")
