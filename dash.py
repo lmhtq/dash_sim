@@ -26,11 +26,14 @@ class Dash:
         self.min_buffer_time = self.mpd["min_buffer"]
         self.segmenet_len = self.mpd["seglen"]
         self.chunk_index = 0
-        self.sim_inteval = 0.1
+        self.sim_inteval = 1
         self.finished = 0
         self.throughput = netspeed.Throughput(log_dir)
 
     def __del__(self):
+        self.log("Finished!")
+        self.log("Switch count: " + str(self.switch_count))
+        self.log("Rebuffer count: " + str(self.buffer_empty_count))
         self.fp.close()
     
     def tick(self):
@@ -89,6 +92,11 @@ class Dash:
 
     def select(self, rate):
         self.can_download = 1
+        rate = int(rate)
+        if rate < 1:
+            rate = 1
+        if rate >= len(self.mpd["bitrates"]):
+            rate = len(self.mpd["bitrates"])
         if rate < 100:
             rate = self.mpd["bitrates"][rate - 1]
         
@@ -96,7 +104,7 @@ class Dash:
         self.bitrate = rate
         self.log("Begin Download: " + str(self.chunk_index) + ", bitrate: " + str(self.bitrate))
         if (self.last_bitrate != self.bitrate):
-            self.buffer_empty_count = self.buffer_empty_count + 1
+            self.switch_count = self.switch_count + 1
             self.log(str(self.chunk_index) + "Rate switched!")
         #print rate, self.chunk_index,len( self.mpd[rate] )
         self.chunk_size = self.mpd[rate][self.chunk_index]

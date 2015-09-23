@@ -5,6 +5,7 @@ import sys
 import getopt
 import dash as ds
 import netspeed as netspeed
+import math
 
 def Init(dash):
     dash.bitrate = dash.mpd["bitrates"][0]
@@ -22,21 +23,56 @@ def Demo(mpd_path, log_path):
     while True:
         Tick(dash)
 
-def algorithm1(dash):
-	now_T = dash.get_throughput() # must call this function, 
-	now_quality = dash.quality    # must be > 0
-	now_buffer_len = dash.buffer_len
-	next_chunks_size_of_specific_quality = dash.get_chunks_size()
-	dash.select(16)
+def BBA(dash):
+    r = 5.0
+    cu = 20.0
+    T = dash.get_throughput()
+    quality = dash.quality
+    buffer_len = dash.buffer_len
+    new_quality = quality
+    max_quality = len(dash.mpd["bitrates"])
+    
+    quality_plus = quality
+    quality_minus = quality
+    if quality > max_quality:
+        quality_plus = max_quality
+    else:
+        quality_plus = quality + 1
 
-	pass
+    if quality <= 1 :
+        quality_minus = 1
+    else:
+        quality_minus = quality - 1
+
+    if buffer_len <= r :
+        new_quality = 1
+    elif buffer_len >= (r + cu) :
+        new_quality = max_quality
+    
+    tmp = 1 + (buffer_len - r) * (max_quality - 1) / cu
+    if tmp >= quality_plus :
+        new_quality = math.floor(tmp)
+    elif tmp <= quality_minus:
+        new_quality = math.ceil(tmp)
+    else:
+        new_quality = quality
+
+    dash.select(new_quality)
+	
+def algorithm1(dash):
+    now_T = dash.get_throughput() # must call this function, 
+    now_quality = dash.quality    # must be > 0
+    now_buffer_len = dash.buffer_len
+    next_chunks_size_of_specific_quality = dash.get_chunks_size()
+    dash.select(16)
 
 def Tick(dash):
     dash.tick()
     if dash.check() == True:
         dash.get_throughput()
         return
-    algorithm1(dash)
+    #algorithm1(dash)
+    BBA(dash)
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]
