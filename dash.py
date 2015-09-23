@@ -8,7 +8,7 @@ import netspeed as netspeed
 class Dash:
     def __init__(self, mpd_dir, log_dir):
         self.fp = open("log_" + time.ctime(), "w")
-        self.buffler_len = 0
+        self.buffer_len = 0
         self.mpd = pm.parse_mpd(mpd_dir)
         self.buffer_empty_count = 0
         self.switch_count = 0
@@ -20,6 +20,7 @@ class Dash:
         self.chunk_size = 0
         self.last_bitrate = 0
         self.bitrate = 0
+        self.quality = 1
         self.netspeed = 0
         self.last_netspeed = 0
         self.min_buffer_time = self.mpd["min_buffer"]
@@ -35,11 +36,11 @@ class Dash:
     def tick(self):
         #update basic variables
         self.time = self.time + self.sim_inteval
-        self.buffler_len = self.buffler_len - self.sim_inteval
+        self.buffer_len = self.buffer_len - self.sim_inteval
         self.last_isempty = self.isempty
         
-        if self.buffler_len <= 0:
-            self.buffler_len = 0
+        if self.buffer_len <= 0:
+            self.buffer_len = 0
             self.log("Buffer Dry Out!")
             self.isempty = 1
         else:
@@ -57,8 +58,8 @@ class Dash:
                 self.log(str(self.chunk_index) + " Downloaded!")
                 self.chunk_index = self.chunk_index + 1
                 self.chunk_downloaded = 0
-                self.buffler_len = self.buffler_len + self.segmenet_len
-                self.log("Buffer Level: " + str(self.buffler_len))
+                self.buffer_len = self.buffer_len + self.segmenet_len
+                self.log("Buffer Level: " + str(self.buffer_len))
                 self.can_download = 0
             else:
                 #pass
@@ -105,5 +106,11 @@ class Dash:
         self.last_netspeed = self.netspeed
         self.netspeed = self.throughput.get_speed()
         return self.netspeed
+
+    def get_chunks_size(self):
+        sizes = []
+        for v in self.mpd["bitrates"]:
+            sizes.append( self.mpd[v][self.chunk_index] )
+        return sizes
 
 

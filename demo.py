@@ -12,7 +12,7 @@ def Init(dash):
     while init_size > 0:
         init_size = init_size - dash.sim_inteval * dash.get_throughput()
         dash.time = dash.time + dash.sim_inteval
-    dash.buffler_len = dash.min_buffer_time
+    dash.buffer_len = dash.min_buffer_time
     dash.chunk_index = 1
     dash.select(1)
 
@@ -23,10 +23,13 @@ def Demo(mpd_path, log_path):
         Tick(dash)
 
 def algorithm1(dash):
-    T = dash.get_throughput() # must call this function
-    dash.select(16)
-    
-    pass
+	now_T = dash.get_throughput() # must call this function, 
+	now_quality = dash.quality    # must be > 0
+	now_buffer_len = dash.buffer_len
+	next_chunks_size_of_specific_quality = dash.get_chunks_size()
+	dash.select(16)
+
+	pass
 
 def Tick(dash):
     dash.tick()
