@@ -48,7 +48,9 @@ class Dash:
             self.isempty = 1
         else:
             self.isempty = 0
-        
+
+        self.log("Buffer Level: " + str(self.buffer_len))
+
         if self.last_isempty == 0 and self.isempty == 1:
             self.buffer_empty_count = self.buffer_empty_count + 1
         #print self.isdownloading, self.can_download

@@ -1,0 +1,809 @@
+1 : Begin Download: 1, bitrate: 46516
+2 : Buffer Level: 0.5
+3 : Buffer Dry Out!
+3 : Buffer Level: 0
+3 : 1 Downloaded!
+3 : Buffer Level: 4
+3 : Begin Download: 2, bitrate: 46516
+4 : Buffer Level: 3
+4 : 2 Downloaded!
+4 : Buffer Level: 7
+4 : Begin Download: 3, bitrate: 91651
+4 : 3Rate switched!
+5 : Buffer Level: 6
+5 : 3 Downloaded!
+5 : Buffer Level: 10
+5 : Begin Download: 4, bitrate: 231141
+5 : 4Rate switched!
+6 : Buffer Level: 9
+6 : 4 Downloaded!
+6 : Buffer Level: 13
+6 : Begin Download: 5, bitrate: 461029
+6 : 5Rate switched!
+7 : Buffer Level: 12
+7 : 5 Downloaded!
+7 : Buffer Level: 16
+7 : Begin Download: 6, bitrate: 642534
+7 : 6Rate switched!
+8 : Buffer Level: 15
+9 : Buffer Level: 14
+9 : 6 Downloaded!
+9 : Buffer Level: 18
+9 : Begin Download: 7, bitrate: 1005167
+9 : 7Rate switched!
+10 : Buffer Level: 17
+11 : Buffer Level: 16
+11 : 7 Downloaded!
+11 : Buffer Level: 20
+11 : Begin Download: 8, bitrate: 1512020
+11 : 8Rate switched!
+12 : Buffer Level: 19
+13 : Buffer Level: 18
+14 : Buffer Level: 17
+14 : 8 Downloaded!
+14 : Buffer Level: 21
+14 : Begin Download: 9, bitrate: 1754001
+14 : 9Rate switched!
+15 : Buffer Level: 20
+16 : Buffer Level: 19
+17 : Buffer Level: 18
+18 : Buffer Level: 17
+18 : 9 Downloaded!
+18 : Buffer Level: 21
+18 : Begin Download: 10, bitrate: 1754001
+19 : Buffer Level: 20
+20 : Buffer Level: 19
+21 : Buffer Level: 18
+21 : 10 Downloaded!
+21 : Buffer Level: 22
+21 : Begin Download: 11, bitrate: 2143443
+21 : 11Rate switched!
+22 : Buffer Level: 21
+23 : Buffer Level: 20
+24 : Buffer Level: 19
+24 : 11 Downloaded!
+24 : Buffer Level: 23
+24 : Begin Download: 12, bitrate: 2506133
+24 : 12Rate switched!
+25 : Buffer Level: 22
+26 : Buffer Level: 21
+27 : Buffer Level: 20
+28 : Buffer Level: 19
+29 : Buffer Level: 18
+29 : 12 Downloaded!
+29 : Buffer Level: 22
+29 : Begin Download: 13, bitrate: 2143443
+29 : 13Rate switched!
+30 : Buffer Level: 21
+31 : Buffer Level: 20
+32 : Buffer Level: 19
+33 : Buffer Level: 18
+34 : Buffer Level: 17
+34 : 13 Downloaded!
+34 : Buffer Level: 21
+34 : Begin Download: 14, bitrate: 1754001
+34 : 14Rate switched!
+35 : Buffer Level: 20
+36 : Buffer Level: 19
+37 : Buffer Level: 18
+38 : Buffer Level: 17
+39 : Buffer Level: 16
+39 : 14 Downloaded!
+39 : Buffer Level: 20
+39 : Begin Download: 15, bitrate: 1512020
+39 : 15Rate switched!
+40 : Buffer Level: 19
+41 : Buffer Level: 18
+42 : Buffer Level: 17
+43 : Buffer Level: 16
+43 : 15 Downloaded!
+43 : Buffer Level: 20
+43 : Begin Download: 16, bitrate: 1512020
+44 : Buffer Level: 19
+45 : Buffer Level: 18
+46 : Buffer Level: 17
+47 : Buffer Level: 16
+47 : 16 Downloaded!
+47 : Buffer Level: 20
+47 : Begin Download: 17, bitrate: 1512020
+48 : Buffer Level: 19
+49 : Buffer Level: 18
+50 : Buffer Level: 17
+51 : Buffer Level: 16
+51 : 17 Downloaded!
+51 : Buffer Level: 20
+51 : Begin Download: 18, bitrate: 1512020
+52 : Buffer Level: 19
+53 : Buffer Level: 18
+54 : Buffer Level: 17
+55 : Buffer Level: 16
+55 : 18 Downloaded!
+55 : Buffer Level: 20
+55 : Begin Download: 19, bitrate: 1512020
+56 : Buffer Level: 19
+57 : Buffer Level: 18
+58 : Buffer Level: 17
+59 : Buffer Level: 16
+59 : 19 Downloaded!
+59 : Buffer Level: 20
+59 : Begin Download: 20, bitrate: 1512020
+60 : Buffer Level: 19
+61 : Buffer Level: 18
+62 : Buffer Level: 17
+63 : Buffer Level: 16
+63 : 20 Downloaded!
+63 : Buffer Level: 20
+63 : Begin Download: 21, bitrate: 1512020
+64 : Buffer Level: 19
+65 : Buffer Level: 18
+66 : Buffer Level: 17
+67 : Buffer Level: 16
+67 : 21 Downloaded!
+67 : Buffer Level: 20
+67 : Begin Download: 22, bitrate: 1512020
+68 : Buffer Level: 19
+69 : Buffer Level: 18
+70 : Buffer Level: 17
+70 : 22 Downloaded!
+70 : Buffer Level: 21
+70 : Begin Download: 23, bitrate: 1754001
+70 : 23Rate switched!
+71 : Buffer Level: 20
+72 : Buffer Level: 19
+73 : Buffer Level: 18
+73 : 23 Downloaded!
+73 : Buffer Level: 22
+73 : Begin Download: 24, bitrate: 2143443
+73 : 24Rate switched!
+74 : Buffer Level: 21
+75 : Buffer Level: 20
+76 : Buffer Level: 19
+77 : Buffer Level: 18
+77 : 24 Downloaded!
+77 : Buffer Level: 22
+77 : Begin Download: 25, bitrate: 2143443
+78 : Buffer Level: 21
+79 : Buffer Level: 20
+80 : Buffer Level: 19
+81 : Buffer Level: 18
+82 : Buffer Level: 17
+82 : 25 Downloaded!
+82 : Buffer Level: 21
+82 : Begin Download: 26, bitrate: 1754001
+82 : 26Rate switched!
+83 : Buffer Level: 20
+84 : Buffer Level: 19
+85 : Buffer Level: 18
+85 : 26 Downloaded!
+85 : Buffer Level: 22
+85 : Begin Download: 27, bitrate: 2143443
+85 : 27Rate switched!
+86 : Buffer Level: 21
+87 : Buffer Level: 20
+88 : Buffer Level: 19
+89 : Buffer Level: 18
+89 : 27 Downloaded!
+89 : Buffer Level: 22
+89 : Begin Download: 28, bitrate: 2143443
+90 : Buffer Level: 21
+91 : Buffer Level: 20
+92 : Buffer Level: 19
+93 : Buffer Level: 18
+93 : 28 Downloaded!
+93 : Buffer Level: 22
+93 : Begin Download: 29, bitrate: 2143443
+94 : Buffer Level: 21
+95 : Buffer Level: 20
+96 : Buffer Level: 19
+97 : Buffer Level: 18
+98 : Buffer Level: 17
+98 : 29 Downloaded!
+98 : Buffer Level: 21
+98 : Begin Download: 30, bitrate: 1754001
+98 : 30Rate switched!
+99 : Buffer Level: 20
+100 : Buffer Level: 19
+101 : Buffer Level: 18
+102 : Buffer Level: 17
+102 : 30 Downloaded!
+102 : Buffer Level: 21
+102 : Begin Download: 31, bitrate: 1754001
+103 : Buffer Level: 20
+104 : Buffer Level: 19
+105 : Buffer Level: 18
+106 : Buffer Level: 17
+106 : 31 Downloaded!
+106 : Buffer Level: 21
+106 : Begin Download: 32, bitrate: 1754001
+107 : Buffer Level: 20
+108 : Buffer Level: 19
+109 : Buffer Level: 18
+110 : Buffer Level: 17
+111 : Buffer Level: 16
+111 : 32 Downloaded!
+111 : Buffer Level: 20
+111 : Begin Download: 33, bitrate: 1512020
+111 : 33Rate switched!
+112 : Buffer Level: 19
+113 : Buffer Level: 18
+114 : Buffer Level: 17
+115 : Buffer Level: 16
+115 : 33 Downloaded!
+115 : Buffer Level: 20
+115 : Begin Download: 34, bitrate: 1512020
+116 : Buffer Level: 19
+117 : Buffer Level: 18
+118 : Buffer Level: 17
+119 : Buffer Level: 16
+119 : 34 Downloaded!
+119 : Buffer Level: 20
+119 : Begin Download: 35, bitrate: 1512020
+120 : Buffer Level: 19
+121 : Buffer Level: 18
+122 : Buffer Level: 17
+123 : Buffer Level: 16
+124 : Buffer Level: 15
+124 : 35 Downloaded!
+124 : Buffer Level: 19
+124 : Begin Download: 36, bitrate: 1260896
+124 : 36Rate switched!
+125 : Buffer Level: 18
+126 : Buffer Level: 17
+127 : Buffer Level: 16
+128 : Buffer Level: 15
+129 : Buffer Level: 14
+129 : 36 Downloaded!
+129 : Buffer Level: 18
+129 : Begin Download: 37, bitrate: 1005167
+129 : 37Rate switched!
+130 : Buffer Level: 17
+131 : Buffer Level: 16
+132 : Buffer Level: 15
+133 : Buffer Level: 14
+134 : Buffer Level: 13
+135 : Buffer Level: 12
+136 : Buffer Level: 11
+136 : 37 Downloaded!
+136 : Buffer Level: 15
+136 : Begin Download: 38, bitrate: 642534
+136 : 38Rate switched!
+137 : Buffer Level: 14
+138 : Buffer Level: 13
+139 : Buffer Level: 12
+140 : Buffer Level: 11
+141 : Buffer Level: 10
+142 : Buffer Level: 9
+143 : Buffer Level: 8
+144 : Buffer Level: 7
+145 : Buffer Level: 6
+146 : Buffer Level: 5
+147 : Buffer Level: 4
+148 : Buffer Level: 3
+148 : 38 Downloaded!
+148 : Buffer Level: 7
+148 : Begin Download: 39, bitrate: 91651
+148 : 39Rate switched!
+149 : Buffer Level: 6
+149 : 39 Downloaded!
+149 : Buffer Level: 10
+149 : Begin Download: 40, bitrate: 231141
+149 : 40Rate switched!
+150 : Buffer Level: 9
+151 : Buffer Level: 8
+151 : 40 Downloaded!
+151 : Buffer Level: 12
+151 : Begin Download: 41, bitrate: 365184
+151 : 41Rate switched!
+152 : Buffer Level: 11
+153 : Buffer Level: 10
+154 : Buffer Level: 9
+155 : Buffer Level: 8
+155 : 41 Downloaded!
+155 : Buffer Level: 12
+155 : Begin Download: 42, bitrate: 365184
+156 : Buffer Level: 11
+157 : Buffer Level: 10
+158 : Buffer Level: 9
+158 : 42 Downloaded!
+158 : Buffer Level: 13
+158 : Begin Download: 43, bitrate: 461029
+158 : 43Rate switched!
+159 : Buffer Level: 12
+160 : Buffer Level: 11
+161 : Buffer Level: 10
+161 : 43 Downloaded!
+161 : Buffer Level: 14
+161 : Begin Download: 44, bitrate: 552051
+161 : 44Rate switched!
+162 : Buffer Level: 13
+163 : Buffer Level: 12
+164 : Buffer Level: 11
+165 : Buffer Level: 10
+165 : 44 Downloaded!
+165 : Buffer Level: 14
+165 : Begin Download: 45, bitrate: 552051
+166 : Buffer Level: 13
+167 : Buffer Level: 12
+168 : Buffer Level: 11
+168 : 45 Downloaded!
+168 : Buffer Level: 15
+168 : Begin Download: 46, bitrate: 642534
+168 : 46Rate switched!
+169 : Buffer Level: 14
+170 : Buffer Level: 13
+171 : Buffer Level: 12
+171 : 46 Downloaded!
+171 : Buffer Level: 16
+171 : Begin Download: 47, bitrate: 642534
+172 : Buffer Level: 15
+173 : Buffer Level: 14
+174 : Buffer Level: 13
+175 : Buffer Level: 12
+175 : 47 Downloaded!
+175 : Buffer Level: 16
+175 : Begin Download: 48, bitrate: 642534
+176 : Buffer Level: 15
+177 : Buffer Level: 14
+178 : Buffer Level: 13
+179 : Buffer Level: 12
+180 : Buffer Level: 11
+180 : 48 Downloaded!
+180 : Buffer Level: 15
+180 : Begin Download: 49, bitrate: 642534
+181 : Buffer Level: 14
+182 : Buffer Level: 13
+183 : Buffer Level: 12
+184 : Buffer Level: 11
+185 : Buffer Level: 10
+186 : Buffer Level: 9
+187 : Buffer Level: 8
+187 : 49 Downloaded!
+187 : Buffer Level: 12
+187 : Begin Download: 50, bitrate: 365184
+187 : 50Rate switched!
+188 : Buffer Level: 11
+189 : Buffer Level: 10
+190 : Buffer Level: 9
+191 : Buffer Level: 8
+192 : Buffer Level: 7
+192 : 50 Downloaded!
+192 : Buffer Level: 11
+192 : Begin Download: 51, bitrate: 276163
+192 : 51Rate switched!
+193 : Buffer Level: 10
+194 : Buffer Level: 9
+195 : Buffer Level: 8
+196 : Buffer Level: 7
+197 : Buffer Level: 6
+197 : 51 Downloaded!
+197 : Buffer Level: 10
+197 : Begin Download: 52, bitrate: 231141
+197 : 52Rate switched!
+198 : Buffer Level: 9
+199 : Buffer Level: 8
+200 : Buffer Level: 7
+201 : Buffer Level: 6
+201 : 52 Downloaded!
+201 : Buffer Level: 10
+201 : Begin Download: 53, bitrate: 231141
+202 : Buffer Level: 9
+203 : Buffer Level: 8
+204 : Buffer Level: 7
+205 : Buffer Level: 6
+206 : Buffer Level: 5
+207 : Buffer Level: 4
+208 : Buffer Level: 3
+208 : 53 Downloaded!
+208 : Buffer Level: 7
+208 : Begin Download: 54, bitrate: 91651
+208 : 54Rate switched!
+209 : Buffer Level: 6
+209 : 54 Downloaded!
+209 : Buffer Level: 10
+209 : Begin Download: 55, bitrate: 231141
+209 : 55Rate switched!
+210 : Buffer Level: 9
+210 : 55 Downloaded!
+210 : Buffer Level: 13
+210 : Begin Download: 56, bitrate: 461029
+210 : 56Rate switched!
+211 : Buffer Level: 12
+211 : 56 Downloaded!
+211 : Buffer Level: 16
+211 : Begin Download: 57, bitrate: 642534
+211 : 57Rate switched!
+212 : Buffer Level: 15
+212 : 57 Downloaded!
+212 : Buffer Level: 19
+212 : Begin Download: 58, bitrate: 1260896
+212 : 58Rate switched!
+213 : Buffer Level: 18
+214 : Buffer Level: 17
+214 : 58 Downloaded!
+214 : Buffer Level: 21
+214 : Begin Download: 59, bitrate: 1754001
+214 : 59Rate switched!
+215 : Buffer Level: 20
+216 : Buffer Level: 19
+217 : Buffer Level: 18
+217 : 59 Downloaded!
+217 : Buffer Level: 22
+217 : Begin Download: 60, bitrate: 2143443
+217 : 60Rate switched!
+218 : Buffer Level: 21
+219 : Buffer Level: 20
+220 : Buffer Level: 19
+220 : 60 Downloaded!
+220 : Buffer Level: 23
+220 : Begin Download: 61, bitrate: 2506133
+220 : 61Rate switched!
+221 : Buffer Level: 22
+222 : Buffer Level: 21
+223 : Buffer Level: 20
+223 : 61 Downloaded!
+223 : Buffer Level: 24
+223 : Begin Download: 62, bitrate: 3170853
+223 : 62Rate switched!
+224 : Buffer Level: 23
+225 : Buffer Level: 22
+226 : Buffer Level: 21
+227 : Buffer Level: 20
+227 : 62 Downloaded!
+227 : Buffer Level: 24
+227 : Begin Download: 63, bitrate: 3170853
+228 : Buffer Level: 23
+229 : Buffer Level: 22
+230 : Buffer Level: 21
+231 : Buffer Level: 20
+231 : 63 Downloaded!
+231 : Buffer Level: 24
+231 : Begin Download: 64, bitrate: 3170853
+232 : Buffer Level: 23
+233 : Buffer Level: 22
+234 : Buffer Level: 21
+235 : Buffer Level: 20
+235 : 64 Downloaded!
+235 : Buffer Level: 24
+235 : Begin Download: 65, bitrate: 3170853
+236 : Buffer Level: 23
+237 : Buffer Level: 22
+238 : Buffer Level: 21
+239 : Buffer Level: 20
+239 : 65 Downloaded!
+239 : Buffer Level: 24
+239 : Begin Download: 66, bitrate: 3170853
+240 : Buffer Level: 23
+241 : Buffer Level: 22
+242 : Buffer Level: 21
+243 : Buffer Level: 20
+243 : 66 Downloaded!
+243 : Buffer Level: 24
+243 : Begin Download: 67, bitrate: 3170853
+244 : Buffer Level: 23
+245 : Buffer Level: 22
+246 : Buffer Level: 21
+247 : Buffer Level: 20
+247 : 67 Downloaded!
+247 : Buffer Level: 24
+247 : Begin Download: 68, bitrate: 3170853
+248 : Buffer Level: 23
+249 : Buffer Level: 22
+250 : Buffer Level: 21
+251 : Buffer Level: 20
+251 : 68 Downloaded!
+251 : Buffer Level: 24
+251 : Begin Download: 69, bitrate: 3170853
+252 : Buffer Level: 23
+253 : Buffer Level: 22
+254 : Buffer Level: 21
+255 : Buffer Level: 20
+255 : 69 Downloaded!
+255 : Buffer Level: 24
+255 : Begin Download: 70, bitrate: 3170853
+256 : Buffer Level: 23
+257 : Buffer Level: 22
+258 : Buffer Level: 21
+259 : Buffer Level: 20
+259 : 70 Downloaded!
+259 : Buffer Level: 24
+259 : Begin Download: 71, bitrate: 3170853
+260 : Buffer Level: 23
+261 : Buffer Level: 22
+262 : Buffer Level: 21
+263 : Buffer Level: 20
+263 : 71 Downloaded!
+263 : Buffer Level: 24
+263 : Begin Download: 72, bitrate: 3170853
+264 : Buffer Level: 23
+265 : Buffer Level: 22
+266 : Buffer Level: 21
+267 : Buffer Level: 20
+267 : 72 Downloaded!
+267 : Buffer Level: 24
+267 : Begin Download: 73, bitrate: 3170853
+268 : Buffer Level: 23
+269 : Buffer Level: 22
+270 : Buffer Level: 21
+271 : Buffer Level: 20
+271 : 73 Downloaded!
+271 : Buffer Level: 24
+271 : Begin Download: 74, bitrate: 3170853
+272 : Buffer Level: 23
+273 : Buffer Level: 22
+274 : Buffer Level: 21
+275 : Buffer Level: 20
+275 : 74 Downloaded!
+275 : Buffer Level: 24
+275 : Begin Download: 75, bitrate: 3170853
+276 : Buffer Level: 23
+277 : Buffer Level: 22
+278 : Buffer Level: 21
+279 : Buffer Level: 20
+279 : 75 Downloaded!
+279 : Buffer Level: 24
+279 : Begin Download: 76, bitrate: 3170853
+280 : Buffer Level: 23
+281 : Buffer Level: 22
+282 : Buffer Level: 21
+283 : Buffer Level: 20
+284 : Buffer Level: 19
+284 : 76 Downloaded!
+284 : Buffer Level: 23
+284 : Begin Download: 77, bitrate: 2506133
+284 : 77Rate switched!
+285 : Buffer Level: 22
+286 : Buffer Level: 21
+287 : Buffer Level: 20
+287 : 77 Downloaded!
+287 : Buffer Level: 24
+287 : Begin Download: 78, bitrate: 3170853
+287 : 78Rate switched!
+288 : Buffer Level: 23
+289 : Buffer Level: 22
+290 : Buffer Level: 21
+291 : Buffer Level: 20
+291 : 78 Downloaded!
+291 : Buffer Level: 24
+291 : Begin Download: 79, bitrate: 3170853
+292 : Buffer Level: 23
+293 : Buffer Level: 22
+294 : Buffer Level: 21
+295 : Buffer Level: 20
+295 : 79 Downloaded!
+295 : Buffer Level: 24
+295 : Begin Download: 80, bitrate: 3170853
+296 : Buffer Level: 23
+297 : Buffer Level: 22
+298 : Buffer Level: 21
+298 : 80 Downloaded!
+298 : Buffer Level: 25
+298 : Begin Download: 81, bitrate: 3744774
+298 : 81Rate switched!
+299 : Buffer Level: 24
+300 : Buffer Level: 23
+300 : 81 Downloaded!
+300 : Buffer Level: 27
+300 : Begin Download: 82, bitrate: 3744774
+301 : Buffer Level: 26
+302 : Buffer Level: 25
+302 : 82 Downloaded!
+302 : Buffer Level: 29
+302 : Begin Download: 83, bitrate: 3744774
+303 : Buffer Level: 28
+304 : Buffer Level: 27
+304 : 83 Downloaded!
+304 : Buffer Level: 31
+304 : Begin Download: 84, bitrate: 3744774
+305 : Buffer Level: 30
+306 : Buffer Level: 29
+307 : Buffer Level: 28
+307 : 84 Downloaded!
+307 : Buffer Level: 32
+307 : Begin Download: 85, bitrate: 3744774
+308 : Buffer Level: 31
+309 : Buffer Level: 30
+310 : Buffer Level: 29
+311 : Buffer Level: 28
+312 : Buffer Level: 27
+312 : 85 Downloaded!
+312 : Buffer Level: 31
+312 : Begin Download: 86, bitrate: 3744774
+313 : Buffer Level: 30
+314 : Buffer Level: 29
+315 : Buffer Level: 28
+316 : Buffer Level: 27
+317 : Buffer Level: 26
+317 : 86 Downloaded!
+317 : Buffer Level: 30
+317 : Begin Download: 87, bitrate: 3744774
+318 : Buffer Level: 29
+319 : Buffer Level: 28
+320 : Buffer Level: 27
+321 : Buffer Level: 26
+322 : Buffer Level: 25
+322 : 87 Downloaded!
+322 : Buffer Level: 29
+322 : Begin Download: 88, bitrate: 3744774
+323 : Buffer Level: 28
+324 : Buffer Level: 27
+325 : Buffer Level: 26
+325 : 88 Downloaded!
+325 : Buffer Level: 30
+325 : Begin Download: 89, bitrate: 3744774
+326 : Buffer Level: 29
+327 : Buffer Level: 28
+327 : 89 Downloaded!
+327 : Buffer Level: 32
+327 : Begin Download: 90, bitrate: 3744774
+328 : Buffer Level: 31
+329 : Buffer Level: 30
+329 : 90 Downloaded!
+329 : Buffer Level: 34
+329 : Begin Download: 91, bitrate: 3744774
+330 : Buffer Level: 33
+331 : Buffer Level: 32
+331 : 91 Downloaded!
+331 : Buffer Level: 36
+331 : Begin Download: 92, bitrate: 3744774
+332 : Buffer Level: 35
+333 : Buffer Level: 34
+333 : 92 Downloaded!
+333 : Buffer Level: 38
+333 : Begin Download: 93, bitrate: 3744774
+334 : Buffer Level: 37
+334 : 93 Downloaded!
+334 : Buffer Level: 41
+334 : Begin Download: 94, bitrate: 3744774
+335 : Buffer Level: 40
+336 : Buffer Level: 39
+336 : 94 Downloaded!
+336 : Buffer Level: 43
+336 : Begin Download: 95, bitrate: 3744774
+337 : Buffer Level: 42
+338 : Buffer Level: 41
+339 : Buffer Level: 40
+340 : Buffer Level: 39
+341 : Buffer Level: 38
+341 : 95 Downloaded!
+341 : Buffer Level: 42
+341 : Begin Download: 96, bitrate: 3744774
+342 : Buffer Level: 41
+343 : Buffer Level: 40
+344 : Buffer Level: 39
+345 : Buffer Level: 38
+346 : Buffer Level: 37
+346 : 96 Downloaded!
+346 : Buffer Level: 41
+346 : Begin Download: 97, bitrate: 3744774
+347 : Buffer Level: 40
+348 : Buffer Level: 39
+349 : Buffer Level: 38
+349 : 97 Downloaded!
+349 : Buffer Level: 42
+349 : Begin Download: 98, bitrate: 3744774
+350 : Buffer Level: 41
+351 : Buffer Level: 40
+351 : 98 Downloaded!
+351 : Buffer Level: 44
+351 : Begin Download: 99, bitrate: 3744774
+352 : Buffer Level: 43
+353 : Buffer Level: 42
+353 : 99 Downloaded!
+353 : Buffer Level: 46
+353 : Begin Download: 100, bitrate: 3744774
+354 : Buffer Level: 45
+355 : Buffer Level: 44
+356 : Buffer Level: 43
+357 : Buffer Level: 42
+358 : Buffer Level: 41
+359 : Buffer Level: 40
+359 : 100 Downloaded!
+359 : Buffer Level: 44
+359 : Begin Download: 101, bitrate: 3744774
+360 : Buffer Level: 43
+361 : Buffer Level: 42
+362 : Buffer Level: 41
+363 : Buffer Level: 40
+364 : Buffer Level: 39
+365 : Buffer Level: 38
+365 : 101 Downloaded!
+365 : Buffer Level: 42
+365 : Begin Download: 102, bitrate: 3744774
+366 : Buffer Level: 41
+367 : Buffer Level: 40
+368 : Buffer Level: 39
+369 : Buffer Level: 38
+370 : Buffer Level: 37
+371 : Buffer Level: 36
+371 : 102 Downloaded!
+371 : Buffer Level: 40
+371 : Begin Download: 103, bitrate: 3744774
+372 : Buffer Level: 39
+373 : Buffer Level: 38
+374 : Buffer Level: 37
+375 : Buffer Level: 36
+376 : Buffer Level: 35
+377 : Buffer Level: 34
+377 : 103 Downloaded!
+377 : Buffer Level: 38
+377 : Begin Download: 104, bitrate: 3744774
+378 : Buffer Level: 37
+379 : Buffer Level: 36
+380 : Buffer Level: 35
+381 : Buffer Level: 34
+382 : Buffer Level: 33
+383 : Buffer Level: 32
+384 : Buffer Level: 31
+385 : Buffer Level: 30
+386 : Buffer Level: 29
+387 : Buffer Level: 28
+387 : 104 Downloaded!
+387 : Buffer Level: 32
+387 : Begin Download: 105, bitrate: 3744774
+388 : Buffer Level: 31
+389 : Buffer Level: 30
+390 : Buffer Level: 29
+391 : Buffer Level: 28
+392 : Buffer Level: 27
+393 : Buffer Level: 26
+394 : Buffer Level: 25
+395 : Buffer Level: 24
+396 : Buffer Level: 23
+397 : Buffer Level: 22
+398 : Buffer Level: 21
+398 : 105 Downloaded!
+398 : Buffer Level: 25
+398 : Begin Download: 106, bitrate: 3744774
+399 : Buffer Level: 24
+400 : Buffer Level: 23
+401 : Buffer Level: 22
+402 : Buffer Level: 21
+403 : Buffer Level: 20
+404 : Buffer Level: 19
+405 : Buffer Level: 18
+406 : Buffer Level: 17
+407 : Buffer Level: 16
+408 : Buffer Level: 15
+408 : 106 Downloaded!
+408 : Buffer Level: 19
+408 : Begin Download: 107, bitrate: 1260896
+408 : 107Rate switched!
+409 : Buffer Level: 18
+410 : Buffer Level: 17
+410 : 107 Downloaded!
+410 : Buffer Level: 21
+410 : Begin Download: 108, bitrate: 1754001
+410 : 108Rate switched!
+411 : Buffer Level: 20
+412 : Buffer Level: 19
+412 : 108 Downloaded!
+412 : Buffer Level: 23
+412 : Begin Download: 109, bitrate: 2506133
+412 : 109Rate switched!
+413 : Buffer Level: 22
+414 : Buffer Level: 21
+415 : Buffer Level: 20
+415 : 109 Downloaded!
+415 : Buffer Level: 24
+415 : Begin Download: 110, bitrate: 3170853
+415 : 110Rate switched!
+416 : Buffer Level: 23
+416 : 110 Downloaded!
+416 : Buffer Level: 27
+416 : Begin Download: 111, bitrate: 3744774
+416 : 111Rate switched!
+417 : Buffer Level: 26
+417 : 111 Downloaded!
+417 : Buffer Level: 30
+417 : Begin Download: 112, bitrate: 3744774
+418 : Buffer Level: 29
+418 : 112 Downloaded!
+418 : Buffer Level: 33
+418 : Begin Download: 113, bitrate: 3744774
+419 : Buffer Level: 32
+419 : 113 Downloaded!
+419 : Buffer Level: 36
+419 : Finished!
+419 : Finished!
+419 : Switch count: 47
+419 : Rebuffer count: 1
