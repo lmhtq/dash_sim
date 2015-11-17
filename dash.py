@@ -11,6 +11,7 @@ class Dash:
         self.buffer_len = 0
         self.mpd = pm.parse_mpd(mpd_dir)
         self.buffer_empty_count = 0
+        self.buffer_max = 30
         self.switch_count = 0
         self.time = 0
         self.isempty = 0
@@ -48,6 +49,9 @@ class Dash:
             self.isempty = 1
         else:
             self.isempty = 0
+
+        if self.buffer_len >= self.buffer_max:
+            return
 
         self.log("Buffer Level: " + str(self.buffer_len))
 

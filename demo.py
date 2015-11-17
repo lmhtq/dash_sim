@@ -64,6 +64,7 @@ def algorithm1(dash):
     now_quality = dash.quality    # must be > 0
     now_buffer_len = dash.buffer_len
     next_chunks_size_of_specific_quality = dash.get_chunks_size()
+    print next_chunks_size_of_specific_quality
     dash.select(16)
 
 def Tick(dash):
@@ -71,8 +72,8 @@ def Tick(dash):
     if dash.check() == True:
         dash.get_throughput()
         return
-    #algorithm1(dash)
-    BBA(dash)
+    algorithm1(dash)
+    #BBA(dash)
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]
