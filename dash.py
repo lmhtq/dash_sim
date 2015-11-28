@@ -96,6 +96,7 @@ class Dash:
         elif self.isdownloading == 0:
             return False
 
+    #this select's rate is quality, it is a index instead of bps
     def select(self, rate):
         self.can_download = 1
         rate = int(rate)
@@ -126,5 +127,28 @@ class Dash:
         for v in self.mpd["bitrates"]:
             sizes.append( self.mpd[v][self.chunk_index] )
         return sizes
+
+    def quality_to_bitrate(self, quality):
+        bitrates = self.mpd["bitrates"]
+        if quality < 1:
+            quality = 1;
+        if quality >= len(bitrates):
+            quality = len(bitrates)
+        return bitrates[quality - 1]
+
+    #this select's rate is bps(the named bps, instead of calced one)
+    def select_by_rate(self, rate):
+        self.can_download = 1
+        rate = int(rate)
+        self.last_bitrate = self.bitrate
+        self.bitrate = rate
+        self.log("Begin Download: " + str(self.chunk_index) + ", bitrate: " + str(self.bitrate))
+        if (self.last_bitrate != self.bitrate):
+            self.switch_count = self.switch_count + 1
+            self.log(str(self.chunk_index) + "Rate switched!")
+        #print rate, self.chunk_index,len( self.mpd[rate] )
+        self.chunk_size = self.mpd[rate][self.chunk_index]
+        self.isdownloading = 1        
+
 
 

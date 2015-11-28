@@ -76,3 +76,6 @@ if __name__ == "__main__" :
     print mpd["bitrates"]
     print mpd["min_buffer"]
     print mpd["seglen"]
+    bitrates = mpd["bitrates"]
+    print mpd[bitrates[0]]
+    print mpd[bitrates[1]]
