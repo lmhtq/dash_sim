@@ -19,8 +19,11 @@ def parse_mpd(filename) :
                     minbuffertime = tag.split('=')[1][2:-1]
                     mpd["min_buffer"] = float(minbuffertime)
         if "dashed" in line:
+            line = filename
             ind1 = line.find('_')
             ind2 = line.find("_onDemand")
+            ind1 = line.find('_', ind1 + 1, ind2)
+            #print (line[ind1:ind2])
             seglen = int(line[ind1+1:ind2-1])
             mpd["seglen"] = seglen
         if "<Representation" in line :
@@ -76,6 +79,6 @@ if __name__ == "__main__" :
     print mpd["bitrates"]
     print mpd["min_buffer"]
     print mpd["seglen"]
-    bitrates = mpd["bitrates"]
-    print mpd[bitrates[0]]
-    print mpd[bitrates[1]]
+    #bitrates = mpd["bitrates"]
+    #print mpd[bitrates[0]]
+    #print mpd[bitrates[1]]

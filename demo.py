@@ -67,15 +67,54 @@ def algorithm1(dash):
     print next_chunks_size_of_specific_quality
     dash.select(16)
 
+def test(dash):
+    T = dash.get_throughput()
+    max_quality = len(dash.mpd["bitrates"])
+    dash.buffer_max = 100
+    buffer_max = dash.buffer_max
+    buffer_len = dash.buffer_len
+
+    if buffer_len >= buffer_max:
+        return
+
+    bitrate = dash.bitrate
+    quality = dash.quality
+    new_quality = quality
+
+    k = T / dash.segment_len
+    tmp_rate = k * buffer_len
+    if tmp_rate > bitrate:
+        while tmp_rate > dash.quality_to_bitrate(new_quality):
+            if new_quality >= max_quality:
+                new_quality = max_quality
+                break
+            else:
+                new_quality = new_quality + 1
+        if new_quality != max_quality:
+            new_quality = new_quality - 1
+
+    elif tmp_rate < bitrate:
+        while tmp_rate < dash.quality_to_bitrate(new_quality):
+            if new_quality <= 1:
+                new_quality = 1
+                break
+            else:
+                new_quality = new_quality - 1
+
+    print "buffer:" + str(buffer_len) + "\tquality:" + str(new_quality)  
+    dash.select(new_quality)
+
 def Tick(dash):
     dash.tick()
     if dash.check() == True:
         dash.get_throughput()
         return
     #algorithm1(dash)
+    #test(dash)
     BBA(dash)
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]
     log_path = sys.argv[2]
     Demo(mpd_path, log_path)
+
