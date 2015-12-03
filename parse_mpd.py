@@ -62,7 +62,8 @@ def fsize(dirname) :
     while (True):
         fn = dirname + fp + str(i) + ".m4s"
         if os.path.exists(fn):
-            farray.append(os.path.getsize(fn))
+            # change byte to bit
+            farray.append(8 * os.path.getsize(fn))
         else:
             break
         i = i + 1
