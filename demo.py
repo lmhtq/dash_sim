@@ -68,13 +68,6 @@ def algorithm1(dash):
     dash.select(16)
 
 def test(dash):
-    if dash.chunk_index == 661:
-        dash.buffer_len = 0
-        dash.buffer_empty_count = 0
-        dash.switch_count = 0
-        dash.bitrate = 0
-        dash.quality = 0
-
     T = dash.get_throughput()
     max_quality = len(dash.mpd["bitrates"])
     buffer_len = dash.buffer_len
@@ -88,12 +81,10 @@ def test(dash):
     if tmp_rate > bitrate:
         while tmp_rate > dash.quality_to_bitrate(new_quality):
             if new_quality >= max_quality:
-                new_quality = max_quality
                 break
             else:
                 new_quality = new_quality + 1
-        if new_quality != max_quality:
-            new_quality = new_quality - 1
+        new_quality = new_quality - 1
 
     elif tmp_rate < bitrate:
         while tmp_rate < dash.quality_to_bitrate(new_quality):
@@ -112,8 +103,8 @@ def Tick(dash):
         dash.get_throughput()
         return
     #algorithm1(dash)
-    # test(dash)
-    BBA(dash)
+    test(dash)
+    #BBA(dash)
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]

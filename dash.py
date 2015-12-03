@@ -38,6 +38,9 @@ class Dash:
         self.fp.close()
     
     def tick(self):
+        if self.buffer_len >= self.buffer_max:
+            return
+
         if self.can_download == 1:
             self.chunk_downloaded = self.chunk_downloaded + self.sim_inteval * self.last_netspeed
             #print self.chunk_downloaded, self.chunk_size
@@ -72,9 +75,6 @@ class Dash:
             self.isempty = 1
         else:
             self.isempty = 0
-
-        if self.buffer_len >= self.buffer_max:
-            return
 
         self.log("Buffer Level: " + str(self.buffer_len))
 
