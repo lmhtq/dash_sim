@@ -7,13 +7,22 @@ import dash as ds
 import netspeed as netspeed
 import math
 
+def set_fix_chunksize(dash):
+    bits = dash.mpd["bitrates"]
+    for bps in bits:
+        bps_str = (bps)
+        for i in range(0,len(dash.mpd[bps_str])):
+            dash.mpd[bps_str][i] = bps * dash.segment_len
+        #print dash.mpd[bps_str]
+
 def Init(dash):
+    #set_fix_chunksize(dash)
     dash.bitrate = dash.mpd["bitrates"][0]
     init_size = dash.mpd[dash.bitrate][0]
     while init_size > 0:
         init_size = init_size - dash.sim_inteval * dash.get_throughput()
         dash.time = dash.time + dash.sim_inteval
-    dash.buffer_len = dash.min_buffer_time
+    dash.buffer_len = dash.segment_len
     dash.chunk_index = 1
     dash.select(1)
 
