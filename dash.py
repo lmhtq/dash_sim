@@ -38,27 +38,6 @@ class Dash:
         self.fp.close()
     
     def tick(self):
-        #update basic variables
-        self.time = self.time + self.sim_inteval
-        self.buffer_len = self.buffer_len - self.sim_inteval
-        self.last_isempty = self.isempty
-        
-        if self.buffer_len <= 0:
-            self.buffer_len = 0
-            self.log("Buffer Dry Out!")
-            self.isempty = 1
-        else:
-            self.isempty = 0
-
-        if self.buffer_len >= self.buffer_max:
-            return
-
-        self.log("Buffer Level: " + str(self.buffer_len))
-
-        if self.last_isempty == 0 and self.isempty == 1:
-            self.buffer_empty_count = self.buffer_empty_count + 1
-        #print self.isdownloading, self.can_download
-        #time.sleep(0.5)
         if self.can_download == 1:
             self.chunk_downloaded = self.chunk_downloaded + self.sim_inteval * self.last_netspeed
             #print self.chunk_downloaded, self.chunk_size
@@ -82,6 +61,28 @@ class Dash:
         else:
             self.finished = 0
 
+        #update basic variables
+        self.time = self.time + self.sim_inteval
+        self.buffer_len = self.buffer_len - self.sim_inteval
+        self.last_isempty = self.isempty
+        
+        if self.buffer_len <= 0:
+            self.buffer_len = 0
+            self.log("Buffer Dry Out!")
+            self.isempty = 1
+        else:
+            self.isempty = 0
+
+        if self.buffer_len >= self.buffer_max:
+            return
+
+        self.log("Buffer Level: " + str(self.buffer_len))
+
+        if self.last_isempty == 0 and self.isempty == 1:
+            self.buffer_empty_count = self.buffer_empty_count + 1
+        #print self.isdownloading, self.can_download
+        #time.sleep(0.5)
+   
     def log(self, msg):
         info = str(self.time) + ' : ' + msg + '\n'
         #print info
