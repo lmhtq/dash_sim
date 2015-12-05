@@ -39,6 +39,9 @@ class Dash:
     
     def tick(self):
         if self.buffer_len >= self.buffer_max:
+            self.time = self.time + self.sim_inteval
+            self.buffer_len = self.buffer_len - self.sim_inteval
+            self.last_isempty = self.isempty
             return
 
         if self.can_download == 1:
