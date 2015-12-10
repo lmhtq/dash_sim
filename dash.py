@@ -27,7 +27,7 @@ class Dash:
         self.min_buffer_time = self.mpd["min_buffer"]
         self.segment_len = self.mpd["seglen"]
         self.chunk_index = 0
-        self.sim_inteval = 1
+        self.sim_inteval = 0.001 #unit sec
         self.finished = 0
         self.throughput = netspeed.Throughput(log_dir)
 
@@ -125,9 +125,9 @@ class Dash:
         self.chunk_size = self.mpd[rate][self.chunk_index]
         self.isdownloading = 1        
 
-    def get_throughput(self):
+    def get_throughput(self, interval = self.sim_inteval):
         self.last_netspeed = self.netspeed
-        self.netspeed = self.throughput.get_speed()
+        self.netspeed = self.throughput.get_speed(-1, int(interval * 1000))
         return self.netspeed
 
     def get_chunks_size(self):

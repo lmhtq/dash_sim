@@ -112,8 +112,8 @@ def Tick(dash):
         dash.get_throughput()
         return
     #algorithm1(dash)
-    test(dash)
-    #BBA(dash)
+    #test(dash)
+    BBA(dash)
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]

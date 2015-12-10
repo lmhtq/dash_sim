@@ -14,20 +14,20 @@ class Throughput():
         net_speed = []
         fp = open(logfile)
         content = fp.readlines()
-        fp.close()
         for line in content :
             fields = line.split(' ')
-            net_speed.append(float(fields[4] ) / float(fields[5]) * 1000.0 )
+            for i in range(0, int(fields[5])):
+                net_speed.append(float(fields[4] ) / float(fields[5]) * 1000.0 )
         return net_speed
 
-    def netspeed(self, ind = -1):
+    def netspeed(self, ind = -1, interval = 1000):
         #mu = 100*1000
         #sigma = 1
         #return random.gauss(mu, sigma)
         #pass
         index = [ind]
         def incr():
-            index[0] = index[0] + 1
+            index[0] = index[0] + interval
             if index[0] >= len(self.ns):
                 index[0] = 0
             return self.ns[index[0]]
@@ -41,6 +41,7 @@ if __name__ == "__main__":
     print ns.get_speed()
     print ns.get_speed()
 
-    nss = ns.netspeed()
+    nss = ns.netspeed(-1, 500)
+    print nss()
     print nss()
     print nss()
