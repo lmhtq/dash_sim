@@ -125,9 +125,10 @@ class Dash:
         self.chunk_size = self.mpd[rate][self.chunk_index]
         self.isdownloading = 1        
 
-    def get_throughput(self, interval = self.sim_inteval):
+    def get_throughput(self):
         self.last_netspeed = self.netspeed
-        self.netspeed = self.throughput.get_speed(-1, int(interval * 1000))
+        interval = self.sim_inteval
+        self.netspeed = self.throughput.netspeed_idx_val(int(interval * 1000))
         return self.netspeed
 
     def get_chunks_size(self):

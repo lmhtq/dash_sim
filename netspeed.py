@@ -9,6 +9,7 @@ class Throughput():
         self.ns = self.parse_log(logfile)
         self.netspeed()
         self.get_speed = self.netspeed()
+        self.netspeed_idx = 0
     
     def parse_log(self, logfile) :
         net_speed = []
@@ -32,6 +33,11 @@ class Throughput():
                 index[0] = 0
             return self.ns[index[0]]
         return incr
+    
+    def netspeed_idx_val(self, interval = 500):
+        idx = (self.netspeed_idx + len(self.ns) ) % len(self.ns)
+        self.netspeed_idx = self.netspeed_idx + interval
+        return self.ns[idx]
 
 if __name__ == "__main__":
     logfile = sys.argv[1]
@@ -45,3 +51,9 @@ if __name__ == "__main__":
     print nss()
     print nss()
     print nss()
+
+    print "netspeed_idx_val"
+    print ns.netspeed_idx_val()
+    print ns.netspeed_idx_val()
+    print ns.netspeed_idx_val()
+    print ns.netspeed_idx_val()
