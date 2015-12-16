@@ -20,8 +20,8 @@ def Init(dash):
     dash.bitrate = dash.mpd["bitrates"][0]
     init_size = dash.mpd[dash.bitrate][0]
     while init_size > 0:
-        init_size = init_size - dash.sim_inteval * dash.get_throughput()
-        dash.time = dash.time + dash.sim_inteval
+        init_size = init_size - dash.sim_interval * dash.get_throughput()
+        dash.time = dash.time + dash.sim_interval
     dash.buffer_len = dash.segment_len
     dash.chunk_index = 1
     dash.select(1)
@@ -84,9 +84,15 @@ def test(dash):
     bitrate = dash.bitrate
     quality = dash.quality
     new_quality = quality
-
-    k = T / dash.segment_len
+    fluctuation = dash.fluctuation
+    Rmin = dash.mpd["bitrates"][0]
+    Rmax = dash.mpd["bitrates"][max_quality-1]
+    
+    k = Rmin / dash.segment_len / (1+fluctuation)
     tmp_rate = k * buffer_len
+
+    dash.buffer_max = math.ceil(Rmax / k)
+
     if tmp_rate > bitrate:
         while tmp_rate > dash.quality_to_bitrate(new_quality):
             if new_quality >= max_quality:
@@ -103,7 +109,7 @@ def test(dash):
             else:
                 new_quality = new_quality - 1
 
-    print "buffer:" + str(buffer_len) + "\tquality:" + str(new_quality)  
+    #print "buffer:" + str(buffer_len) + "\tquality:" + str(new_quality)  
     dash.select(new_quality)
 
 def Tick(dash):
@@ -112,8 +118,8 @@ def Tick(dash):
         dash.get_throughput()
         return
     #algorithm1(dash)
-    #test(dash)
-    BBA(dash)
+    test(dash)
+    #BBA(dash)
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]

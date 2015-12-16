@@ -44,6 +44,7 @@ def parse_mpd(filename) :
             dirname[-1] = dir
             dirname = '/'.join(dirname) + '/'
             mpd[tmp_bps] = fsize(dirname)
+    mpd["bitrates"].sort()
     return mpd
 
 def fsize(dirname) :

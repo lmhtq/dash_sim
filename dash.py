@@ -27,25 +27,27 @@ class Dash:
         self.min_buffer_time = self.mpd["min_buffer"]
         self.segment_len = self.mpd["seglen"]
         self.chunk_index = 0
-        self.sim_inteval = 0.001 #unit sec
+        self.sim_interval = 0.01 #unit sec
         self.finished = 0
         self.throughput = netspeed.Throughput(log_dir)
+        self.fluctuation = 0
 
     def __del__(self):
         self.log("Finished!")
+        self.log("Max buffer: " + str(self.buffer_max))
         self.log("Switch count: " + str(self.switch_count))
         self.log("Rebuffer count: " + str(self.buffer_empty_count))
         self.fp.close()
     
     def tick(self):
-        if self.buffer_len >= self.buffer_max:
-            self.time = self.time + self.sim_inteval
-            self.buffer_len = self.buffer_len - self.sim_inteval
+        if self.buffer_len + self.segment_len >= self.buffer_max:
+            self.time = self.time + self.sim_interval
+            self.buffer_len = self.buffer_len - self.sim_interval
             self.last_isempty = self.isempty
             return
 
         if self.can_download == 1:
-            self.chunk_downloaded = self.chunk_downloaded + self.sim_inteval * self.last_netspeed
+            self.chunk_downloaded = self.chunk_downloaded + self.sim_interval * self.last_netspeed
             #print self.chunk_downloaded, self.chunk_size
             if self.chunk_downloaded >= self.chunk_size:
                 self.isdownloading = 0
@@ -68,8 +70,8 @@ class Dash:
             self.finished = 0
 
         #update basic variables
-        self.time = self.time + self.sim_inteval
-        self.buffer_len = self.buffer_len - self.sim_inteval
+        self.time = self.time + self.sim_interval
+        self.buffer_len = self.buffer_len - self.sim_interval
         self.last_isempty = self.isempty
         
         if self.buffer_len <= 0:
@@ -127,7 +129,7 @@ class Dash:
 
     def get_throughput(self):
         self.last_netspeed = self.netspeed
-        interval = self.sim_inteval
+        interval = self.sim_interval
         self.netspeed = self.throughput.netspeed_idx_val(int(interval * 1000))
         return self.netspeed
 
