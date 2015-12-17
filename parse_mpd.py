@@ -24,7 +24,15 @@ def parse_mpd(filename) :
             ind2 = line.find("_onDemand")
             ind1 = line.find('_', ind1 + 1, ind2)
             #print (line[ind1:ind2])
-            seglen = int(line[ind1+1:ind2-1])
+            #print line[ind2], line[ind2-1]
+            #print ind1+1, ind2
+            if line[ind2-1] == "s":
+                seglen = int(line[ind1+1:ind2-1])
+            else:
+                if ind1+1 == ind2 - 1:
+                    seglen = int(line[ind1+1])
+                else:
+                    seglen = int(line[ind1+1, ind2])
             mpd["seglen"] = seglen
         if "<Representation" in line :
             line = line.replace('"', '')
