@@ -123,7 +123,7 @@ class Dash:
         if (self.last_bitrate != self.bitrate):
             self.switch_count = self.switch_count + 1
             self.log(str(self.chunk_index) + "Rate switched!")
-        #print rate, self.chunk_index,len( self.mpd[rate] )
+        #print rate, self.chunk_index,len(self.mpd[rate] )
         self.chunk_size = self.mpd[rate][self.chunk_index]
         self.isdownloading = 1        
 

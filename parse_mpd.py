@@ -66,7 +66,7 @@ def fsize(dirname) :
             finit = f
             break
     farray = []
-    farray.append(os.path.getsize(dirname + finit))
+    farray.append(8 * os.path.getsize(dirname + finit))
     i = 1
     while (True):
         fn = dirname + fp + str(i) + ".m4s"
@@ -85,10 +85,14 @@ if __name__ == "__main__" :
         print arg
     mpd = parse_mpd(sys.argv[1])
     for k in mpd:
-        print k
+        if str(type(mpd[k])) == "<type 'list'>":
+            print k, len(mpd[k])
     print mpd["bitrates"]
     print mpd["min_buffer"]
     print mpd["seglen"]
+    print "500459", mpd[500459]
+    print "891912", mpd[891912]
+    print "1171990", mpd[1171990]
     #bitrates = mpd["bitrates"]
     #print mpd[bitrates[0]]
     #print mpd[bitrates[1]]
