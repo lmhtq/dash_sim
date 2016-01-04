@@ -30,7 +30,7 @@ class Dash:
         self.sim_interval = 0.01 #unit sec
         self.finished = 0
         self.throughput = netspeed.Throughput(log_dir)
-        self.fluctuation = 0
+        self.fluctuation = 0.56
 
     def __del__(self):
         self.log("Finished!")
@@ -119,12 +119,12 @@ class Dash:
         
         self.last_bitrate = self.bitrate
         self.bitrate = rate
-        self.log("Begin Download: " + str(self.chunk_index) + ", bitrate: " + str(self.bitrate) + " quality:" + str(self.quality))
+        self.chunk_size = self.mpd[rate][self.chunk_index]
+        self.log("Begin Download: " + str(self.chunk_index) + ", bitrate: " + str(self.bitrate) + " quality:" + str(self.quality) + ", chunk size: " + str(self.chunk_size))
         if (self.last_bitrate != self.bitrate):
             self.switch_count = self.switch_count + 1
             self.log(str(self.chunk_index) + "Rate switched!")
-        #print rate, self.chunk_index,len(self.mpd[rate] )
-        self.chunk_size = self.mpd[rate][self.chunk_index]
+        #print rate, self.chunk_index,len(self.mpd[rate])
         self.isdownloading = 1        
 
     def get_throughput(self):
@@ -161,13 +161,13 @@ class Dash:
             quality = quality + 1
         quality = quality + 1
         self.quality = quality
+        self.chunk_size = self.mpd[rate][self.chunk_index]
 
-        self.log("Begin Download: " + str(self.chunk_index) + ", bitrate: " + str(self.bitrate) + " quality:" + str(self.quality))
+        self.log("Begin Download: " + str(self.chunk_index) + ", bitrate: " + str(self.bitrate) + " quality:" + str(self.quality) + ", chunk size: " + str(self.chunk_size))
         if (self.last_bitrate != self.bitrate):
             self.switch_count = self.switch_count + 1
             self.log(str(self.chunk_index) + "Rate switched!")
         #print rate, self.chunk_index,len( self.mpd[rate] )
-        self.chunk_size = self.mpd[rate][self.chunk_index]
         self.isdownloading = 1        
 
 

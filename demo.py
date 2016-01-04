@@ -16,7 +16,7 @@ def set_fix_chunksize(dash):
         #print dash.mpd[bps_str]
 
 def Init(dash):
-    set_fix_chunksize(dash)
+    #set_fix_chunksize(dash)
     dash.bitrate = dash.mpd["bitrates"][0]
     init_size = dash.mpd[dash.bitrate][0]
     while init_size > 0:
