@@ -67,7 +67,7 @@ def parse_mpd_edgesuite(filename) :
     fin.close()
     tmp_bps = ""
     for line in content:
-        mpd["seglen"] = seglen
+        mpd["seglen"] = 4
 	if "minBufferTime" in line:
             line2 = line.replace('"', '')
             tags = line2.split(' ')
@@ -76,6 +76,8 @@ def parse_mpd_edgesuite(filename) :
                     minbuffertime = tag.split('=')[1][2:-1]
                     mpd["min_buffer"] = float(minbuffertime)
         if "<Representation" in line :
+            if "audio" in line:
+                continue
             line2 = line.replace('"', '')
             line2 = line2.replace('>', '')
             tags = line2.split(' ')
@@ -86,6 +88,8 @@ def parse_mpd_edgesuite(filename) :
                     tmp_bps = int(kv[1])
                     mpd[tmp_bps] = []
         if "<Representation id" in line:
+            if "audio" in line:
+                continue
             stt = line.find('"')
             end = line.find('"', stt+1, len(line)-1)
             dir = line[stt+1:end]
