@@ -30,7 +30,7 @@ class Dash:
         self.sim_interval = 0.01 #unit sec
         self.finished = 0
         self.throughput = netspeed.Throughput(log_dir)
-        self.fluctuation = 0.56
+        self.fluctuation = 0.39
 
     def __del__(self):
         self.log("Finished!")

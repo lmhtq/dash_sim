@@ -14,7 +14,7 @@ def parse_mpd(filename) :
         if "DASH-MPD.xsd" in line:#dash.edgesuite.net, may be need to find a more identidied label
             return parse_mpd_edgesuite(filename)
         else:#http://www-itec.uni-klu.ac.at/ftp/datasets/DASHDataset2014
-            continue    
+            pass    
 	if "minBufferTime" in line:
             line = line.replace('"', '')
             tags = line.split(' ')

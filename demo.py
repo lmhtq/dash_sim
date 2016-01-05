@@ -88,7 +88,7 @@ def test(dash):
     Rmin = dash.mpd["bitrates"][0]
     Rmax = dash.mpd["bitrates"][max_quality-1]
     
-    k = Rmin / dash.segment_len / (1+fluctuation)
+    k = 0.9 * Rmin / dash.segment_len / (1+fluctuation)
     tmp_rate = k * buffer_len
 
     dash.buffer_max = math.ceil(Rmax / k)
