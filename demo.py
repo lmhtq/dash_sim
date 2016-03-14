@@ -6,6 +6,7 @@ import getopt
 import dash as ds
 import netspeed as netspeed
 import math
+import time
 
 def set_fix_chunksize(dash):
     bits = dash.mpd["bitrates"]
@@ -34,8 +35,8 @@ def Init(dash):
     dash.chunk_index = 1
     dash.select(1)
 
-def Demo(mpd_path, log_path):
-    dash = ds.Dash(mpd_path, log_path)
+def Demo(mpd_path, trace_path, log_path):
+    dash = ds.Dash(mpd_path, trace_path, log_path)
     Init(dash)
     while True:
         Tick(dash)
@@ -278,6 +279,10 @@ def Tick(dash):
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]
-    log_path = sys.argv[2]
-    Demo(mpd_path, log_path)
+    trace_path = sys.argv[2]
+    try:
+        log_path = sys.argv[3]
+    except:
+        log_path = "log " + time.ctime()
+    Demo(mpd_path, trace_path, log_path)
 

@@ -8,8 +8,8 @@ from collections import deque
 import math
 
 class Dash:
-    def __init__(self, mpd_dir, log_dir):
-        self.fp = open("log_" + time.ctime(), "w")
+    def __init__(self, mpd_dir, trace_dir, log_dir):
+        self.fp = open(log_dir, "w")
         self.buffer_len = 0
         self.mpd = pm.parse_mpd(mpd_dir)
         self.buffer_empty_count = 0
@@ -31,7 +31,7 @@ class Dash:
         self.chunk_index = 0
         self.sim_interval = 0.01 #unit sec
         self.finished = 0
-        self.throughput = netspeed.Throughput(log_dir)
+        self.throughput = netspeed.Throughput(trace_dir)
         self.fluctuation = 0
         #for ELASTIC
         self.elastic_dT = 0 # the spent time of this segment
