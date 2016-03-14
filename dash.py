@@ -30,7 +30,7 @@ class Dash:
         self.sim_interval = 0.01 #unit sec
         self.finished = 0
         self.throughput = netspeed.Throughput(log_dir)
-        self.fluctuation = 0.39
+        self.fluctuation = 0
 
     def __del__(self):
         self.log("Finished!")
@@ -138,6 +138,10 @@ class Dash:
         for v in self.mpd["bitrates"]:
             sizes.append( self.mpd[v][self.chunk_index] )
         return sizes
+
+    def get_chunk_size(self):
+        sizes = self.mpd[self.bitrate]
+        return sizes[self.chunk_index]
 
     def quality_to_bitrate(self, quality):
         bitrates = self.mpd["bitrates"]
