@@ -15,7 +15,15 @@ def set_fix_chunksize(dash):
             dash.mpd[bps_str][i] = bps * dash.segment_len
         #print dash.mpd[bps_str]
 
+def init_elastic(dash):
+    dash.elastic_qT = 16
+    dash.elastic_qI = 0
+    dash.elastic_d = 1
+    dash.elastic_q = 0
+    dash.elastic_T = dash.time
+
 def Init(dash):
+    init_elastic(dash)
     #set_fix_chunksize(dash)
     dash.bitrate = dash.mpd["bitrates"][0]
     init_size = dash.mpd[dash.bitrate][0]
@@ -182,6 +190,80 @@ def RB(dash):
 
     dash.select(new_quality)
 
+def ELASTIC(dash):
+    T = dash.get_throughput()
+    max_quality = len(dash.mpd["bitrates"])
+    
+    k=1.0 * 100
+    kp = 1.0/(k)
+    ki = 1.0/(k*10)
+
+    dash.elastic_dT = dash.time - dash.elastic_T
+    dash.elastic_T = dash.time
+    dash.elastic_d = 1
+    dash.elastic_q = dash.buffer_len
+    if dash.elastic_q <= 0:
+        dash.elastic_d = 0
+    
+    tmp = 0
+    dash.elastic_deque.append(1.0 * dash.elastic_S / dash.elastic_dT)
+    for i in dash.elastic_deque:
+        tmp = tmp + 1.0 / i
+    tmp = 1.0 * len(dash.elastic_deque) / tmp
+    dash.elastic_r = tmp
+
+    dash.elastic_qI = dash.elastic_qI + dash.elastic_dT * (dash.elastic_q - dash.elastic_qT)
+    
+    new_quality_bps = dash.elastic_r / (dash.elastic_d - kp * dash.elastic_q - ki * dash.elastic_qI)
+    
+    new_quality = 0
+    bitrates = dash.mpd["bitrates"]
+    for i in bitrates:
+        if (float(i) <= new_quality_bps):
+            new_quality = new_quality + 1
+    
+    if (new_quality > max_quality) :
+        new_quality = max_quality
+    
+    dash.select(new_quality)
+
+def ELASTIC_ACK(dash):
+    T = dash.get_throughput()
+    max_quality = len(dash.mpd["bitrates"])
+    
+    k=1.0 * 100
+    kp = 1.0/(k)
+    ki = 1.0/(k*10)
+
+    dash.elastic_dT = dash.time - dash.elastic_T
+    dash.elastic_T = dash.time
+    dash.elastic_d = 1
+    dash.elastic_q = dash.buffer_len
+    if dash.elastic_q <= 0:
+        dash.elastic_d = 0
+    
+    tmp = 0
+    dash.elastic_deque.append(1.0 * dash.elastic_S / dash.elastic_dT)
+    for i in dash.elastic_deque:
+        tmp = tmp + 1.0 / i
+    tmp = 1.0 * len(dash.elastic_deque) / tmp
+    dash.elastic_r = tmp
+
+    dash.elastic_qI = dash.elastic_qI + dash.elastic_dT * (dash.elastic_q - dash.elastic_qT)
+    
+    new_quality_bps = dash.elastic_r / (dash.elastic_d - kp * dash.elastic_q - ki * dash.elastic_qI)
+    
+    new_quality = 0
+    bitrates = dash.get_chunks_size()
+    for i in bitrates:
+        if (float(i) <= new_quality_bps):
+            new_quality = new_quality + 1
+    
+    if (new_quality > max_quality) :
+        new_quality = max_quality
+    
+    dash.select(new_quality)
+
 
 def Tick(dash):
     dash.tick()
@@ -189,8 +271,10 @@ def Tick(dash):
         dash.get_throughput()
         return
     #algorithm1(dash)
-    BB(dash)
+    #BB(dash)
     #RB(dash)
+    ELASTIC(dash)
+    #ELASTIC_ACK(dash)
 
 if __name__ == "__main__":
     mpd_path = sys.argv[1]

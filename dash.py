@@ -4,6 +4,8 @@ import string
 import time
 import parse_mpd as pm
 import netspeed as netspeed
+from collections import deque
+import math
 
 class Dash:
     def __init__(self, mpd_dir, log_dir):
@@ -31,6 +33,16 @@ class Dash:
         self.finished = 0
         self.throughput = netspeed.Throughput(log_dir)
         self.fluctuation = 0
+        #for ELASTIC
+        self.elastic_dT = 0 # the spent time of this segment
+        self.elastic_S = 0  # last segment's size
+        self.elastic_d = 0  # 1: playing , 0:pause or elastic_q = 0
+        self.elastic_q = self.buffer_len  # equal to self.buffer_len
+        self.elastic_r = 0  # harmonic filter mean of last (elastic_S/elastic_dT)
+        self.elastic_qI = 0
+        self.elastic_qT = 16
+        self.elastic_T = self.time
+        self.elastic_deque = deque(maxlen = 5)
 
     def __del__(self):
         self.log("Finished!")
@@ -50,6 +62,7 @@ class Dash:
             self.chunk_downloaded = self.chunk_downloaded + self.sim_interval * self.last_netspeed
             #print self.chunk_downloaded, self.chunk_size
             if self.chunk_downloaded >= self.chunk_size:
+                self.elastic_S = self.chunk_size
                 self.isdownloading = 0
                 self.log(str(self.chunk_index) + " Downloaded!")
                 self.chunk_index = self.chunk_index + 1
