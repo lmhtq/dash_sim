@@ -194,6 +194,7 @@ def RB(dash):
 def ELASTIC(dash):
     T = dash.get_throughput()
     max_quality = len(dash.mpd["bitrates"])
+    fluctuation = dash.fluctuation
     
     k=1.0 * 100
     kp = 1.0/(k)
@@ -215,7 +216,7 @@ def ELASTIC(dash):
 
     dash.elastic_qI = dash.elastic_qI + dash.elastic_dT * (dash.elastic_q - dash.elastic_qT)
     
-    new_quality_bps = dash.elastic_r / (dash.elastic_d - kp * dash.elastic_q - ki * dash.elastic_qI)
+    new_quality_bps = dash.elastic_r / (dash.elastic_d - kp * dash.elastic_q - ki * dash.elastic_qI) / (1+fluctuation)
     
     new_quality = 0
     bitrates = dash.mpd["bitrates"]

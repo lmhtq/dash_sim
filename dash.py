@@ -32,7 +32,7 @@ class Dash:
         self.sim_interval = 0.01 #unit sec
         self.finished = 0
         self.throughput = netspeed.Throughput(trace_dir)
-        self.fluctuation = 0
+        self.fluctuation = 0.39
         #for ELASTIC
         self.elastic_dT = 0 # the spent time of this segment
         self.elastic_S = 0  # last segment's size
